@@ -4,7 +4,7 @@ import cors from 'cors';
 import "dotenv/config";
 //Mongoos epackage helps us to connect with our database
 import mongoose, { mongo } from "mongoose";
-
+import userRoutes  from './routes/users';
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
 
@@ -16,12 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors())
 
-//Express endpoint
-app.get("/api/test",async (req:Request,resp:Response)=> {
-    resp.json({message:"Hello from express endpoitn"});
-
-})
-
+app.use("/api/users", userRoutes);
 
 //start the server for supporing the requests
 app.listen(7000,() => {
