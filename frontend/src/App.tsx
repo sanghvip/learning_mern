@@ -7,10 +7,11 @@ function App() {
   return (
    <Router location={''} navigator={history} >
     <Routes>
-      <Route path="/" element={<Layout></Layout>} />
+      <Route path="/" element={<Layout><p>Home page</p></Layout>} />
+      <Route path="/search" element={<Layout><h1>Search</h1></Layout>} />
     </Routes>
    </Router>
   )
 }
 
-export default App
+export default App;

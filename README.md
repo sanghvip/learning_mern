@@ -12,3 +12,7 @@ the above libs are only dev libs. This will help us improve our performance in t
 
 
 4. we are going to use vite for developing front end. we wil be usin typescript+swc . SWC is basically a typescript and javascript compiler written in rust to provide faster compile times as compared to bable.
+
+5. one can override styles in tailwind by adding that class name in the tailwind config file
+
+6.interfaces in typescript - https://www.typescriptlang.org/docs/handbook/interfaces.html
