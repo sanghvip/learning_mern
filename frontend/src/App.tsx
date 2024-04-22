@@ -1,14 +1,14 @@
-import { Route, Router, Routes } from 'react-router-dom'
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Layout from './layouts/Layout'
-import { createMemoryHistory } from "history";
+import Register from './pages/register';
 
 function App() {
-  const history = createMemoryHistory();
   return (
-   <Router location={''} navigator={history} >
+   <Router>
     <Routes>
-      <Route path="/" element={<Layout><p>Home page</p></Layout>} />
-      <Route path="/search" element={<Layout><h1>Search</h1></Layout>} />
+        <Route path="/" element={<Layout><p>Home page</p></Layout>} />
+        <Route path="/register" element={<Layout><Register /></Layout>} />
+        <Route path="*" element={<Navigate to="/" />} />
     </Routes>
    </Router>
   )
