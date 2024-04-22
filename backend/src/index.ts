@@ -1,10 +1,11 @@
-import express, {Request,Response} from'express';
+import express, {Request,Response, application} from'express';
 import cors from 'cors';
 //The Dotenv/config import loads your environment variables
 import "dotenv/config";
 //Mongoos epackage helps us to connect with our database
 import mongoose, { mongo } from "mongoose";
 import userRoutes  from './routes/users';
+import authRoutes from "./routes/auth";
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors())
 
+app.use("/api/auth",authRoutes);
 app.use("/api/users", userRoutes);
 
 //start the server for supporing the requests
