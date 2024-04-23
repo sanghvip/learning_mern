@@ -26,7 +26,7 @@ const Register = () => {
                     LastName
                     <input className="border rounded w-full py-1 px-2 font-normal" {...register("lastName", { required: "This field is required"})}></input>
                     {errors.lastName && (
-                        <span className="text-red-500">{errors.firstName.message}</span>
+                        <span className="text-red-500">{errors.lastName.message}</span>
                     )}
                 </label>
             </div>
@@ -39,14 +39,14 @@ const Register = () => {
             </label>
             <label className="text-gray-700 text-sm font-bold flex-1" >
             Password
-                <input type="email" className="border rounded w-full py-1 px-2 font-normal" {...register("password", { required: "This field is required", minLength: { value: 6, message: "Password must be atleast 6 characters" } })}></input>
+                <input type="password" className="border rounded w-full py-1 px-2 font-normal" {...register("password", { required: "This field is required", minLength: { value: 6, message: "Password must be atleast 6 characters" } })}></input>
                 {errors.password && (
                         <span className="text-red-500">{errors.password.message}</span>
                     )}
             </label>
             <label className="text-gray-700 text-sm font-bold flex-1" >
             Confirm Password
-                <input type="email" className="border rounded w-full py-1 px-2 font-normal" {...register("confirmPassword", {
+                <input type="password" className="border rounded w-full py-1 px-2 font-normal" {...register("confirmPassword", {
                     validate: (val) => {
                         if (!val) {
                             return "This field is required"
@@ -57,10 +57,10 @@ const Register = () => {
                     }
                 })
             }>
-                {errors.confirmPassword && (
+            </input>
+            {errors.confirmPassword && (
                         <span className="text-red-500">{errors.confirmPassword.message}</span>
                     )}
-            </input>
             </label>
             <span>
                 <button type="submit" className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl">Create Account</button>
