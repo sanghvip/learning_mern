@@ -16,3 +16,5 @@ the above libs are only dev libs. This will help us improve our performance in t
 5. one can override styles in tailwind by adding that class name in the tailwind config file
 
 6.interfaces in typescript - https://www.typescriptlang.org/docs/handbook/interfaces.html
+
+7. beginners guide to react queries - https://refine.dev/blog/react-query-guide/#mutating-data

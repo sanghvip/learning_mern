@@ -7,8 +7,8 @@ const router = express.Router();
 
 //any request we get from the client from /api/register will go to the following method
 router.post("/register", [
-    check("firstname","First name is required").isString(),
-    check("lastname","Last name is required").isString(),
+    check("firstName","First name is required").isString(),
+    check("lastName","Last name is required").isString(),
     check("email","Email is required").isEmail(),
     check("password","Password length should be 6 or more characters").isLength({min:6})
 ],async (req: Request, res: Response)=>{
