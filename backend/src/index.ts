@@ -15,7 +15,10 @@ const app = express();
 app.use(express.json());
 // Helps to parse the URL to get the create parameters
 app.use(express.urlencoded({extended:true}));
-app.use(cors())
+app.use(cors({
+    origin: process.env.FRONTEND_URL,
+    credentials:true,
+}));
 
 app.use("/api/auth",authRoutes);
 app.use("/api/users", userRoutes);
