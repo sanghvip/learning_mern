@@ -11,9 +11,9 @@ export type RegisterFormData = {
     password: string,
     confirmPassword: string
 }
-const Register = () => {
+const Register = () =>  {
     const navigate = useNavigate();
-    const { showToast } = userAppContext();
+    const { showToast,isLoggedIn } = userAppContext();
     const { register, watch, handleSubmit, formState: { errors } } = useForm<RegisterFormData>();
     const mutation = useMutation(apiClient.register, {
         onSuccess: () => {
@@ -28,6 +28,7 @@ const Register = () => {
     const onSubmit = handleSubmit((data) => {
         mutation.mutate(data);
     });
+
     return (
         <form className="flex flex-col gap-5" onSubmit={onSubmit}>
             <h2 className="text-3xl font-bold">Create an account</h2>
