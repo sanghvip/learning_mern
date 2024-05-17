@@ -6,10 +6,12 @@ import "dotenv/config";
 import mongoose, { mongo } from "mongoose";
 import userRoutes  from './routes/users';
 import authRoutes from "./routes/auth";
+import cookieParser from "cookie-parser";
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string)
 
 const app = express();
+app.use(cookieParser());
 
 //Helps to convert API request body to json automatically
 app.use(express.json());
