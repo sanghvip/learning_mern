@@ -35,6 +35,11 @@ check("password","Password with 6 or more characters required").isLength({min:6}
             secure:process.env.NODE_ENV==="production",
             maxAge:86400000
         })
+        res.set({'Access-Control-Allow-Credentials': 'true',
+            'Path':'/',
+            'HttpOnly':'',
+            'Secure':'',
+        })
         return res.status(200).json({userId:user._id});
 
     } catch(error){
