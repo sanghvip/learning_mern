@@ -1,4 +1,4 @@
-# learning_nextjs
+# learning_mern
 A repository for recording notes while learning next js
 creating backend
 1. npm init - created a new node project for us
