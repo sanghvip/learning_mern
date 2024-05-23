@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const UI_URL = "http://localhost:5173/"
+const UI_URL = "http://localhost:5173/sign-in"
 
 test('should allow the user to signin', async ({ page }) => {
   await page.goto(UI_URL);
@@ -15,18 +15,8 @@ test('should allow the user to signin', async ({ page }) => {
 
   await page.getByRole("button",{name: "Login"}).click();
 
-  await expect(page.getByText("Sign In Successful!")).toBeVisible();
+  await expect(page.getByText("SignIn successful")).toBeVisible();
   await expect(page.getByRole("link",{name:"My Bookings"})).toBeVisible();
   await expect(page.getByRole("link",{name:"My Hotels"})).toBeVisible();
   await expect(page.getByRole("button",{name:"Sign Out"})).toBeVisible();
-});
-
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });

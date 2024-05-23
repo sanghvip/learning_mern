@@ -52,7 +52,7 @@ export const validateToken = async ()=> {
 export const logout = async ()=> {
     const response = await fetch(`${API_BASE_URL}/api/auth/logout`,{
         credentials: "include",
-        method:"POST"
+                method:"POST"
     })
 
     if(!response.ok){

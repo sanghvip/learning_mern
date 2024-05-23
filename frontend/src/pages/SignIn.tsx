@@ -47,7 +47,7 @@ const SignIn = () => {
             </label>
             <span className="flex items-center justify-between">
                 <span className="text-sm">Not Registered?<Link to="/register" className="underline">Create an account here</Link></span>
-                <button type="submit" className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl">Login In</button>
+                <button type="submit" className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl">Login</button>
             </span>
         </form>
     )
