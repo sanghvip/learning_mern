@@ -9,7 +9,7 @@ export type SignInFormData = {
     password: string;
 }
 const SignIn = () => {
-    const {showToast,isLoggedIn} = userAppContext();
+    const {showToast} = userAppContext();
     const queryClient = useQueryClient();
     const navigate = useNavigate();
     const { register, formState: {errors}, handleSubmit } = useForm<SignInFormData>();

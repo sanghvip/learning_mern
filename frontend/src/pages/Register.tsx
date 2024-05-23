@@ -13,7 +13,7 @@ export type RegisterFormData = {
 }
 const Register = () =>  {
     const navigate = useNavigate();
-    const { showToast,isLoggedIn } = userAppContext();
+    const { showToast} = userAppContext();
     const queryClient = useQueryClient();
     const { register, watch, handleSubmit, formState: { errors } } = useForm<RegisterFormData>();
     const mutation = useMutation(apiClient.register, {
